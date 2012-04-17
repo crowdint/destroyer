@@ -47,7 +47,7 @@ module Destroyer
         _foreign_key = _class.reflect_on_association(association).try(:options).try(:[], :foreign_key) || "#{_class.table_name.singularize}_id"
         association.select("#{association.primary_key}").where(["#{_foreign_key} IN (?)", ids])
           .find_in_batches(:batch_size => destroyer_batch_size) do |association_ids|
-            destroy_associations(association, association_ids.map(&:id))
+            destroy_associations(association, association_ids.map(&association.primary_key.to_sym))
             association.delete_all(["#{_foreign_key} IN (?)", ids])
         end
       end
