@@ -54,3 +54,9 @@ If you do not specify a default block, and later in the code you call your Model
     PurchaseOrder.start_destroyer
 
 And that code is going to delete all purchase orders which 'state' is 'deleted' and are older that one month ago, and it will also delete all its related line items as well as all their variant line items.
+
+# About the Author
+
+[Crowd Interactive](http://www.crowdint.com) is a web design and development company that happens to work in Colima, Mexico.
+We specialize in building and growing online retail stores. We don’t work with everyone – just companies we believe in. Call us today to see if there’s a fit.
+Find more info [here](http://www.crowdint.com)!

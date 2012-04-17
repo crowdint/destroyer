@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Sergio Figueroa"]
   s.email       = ["sergio.figueroa@crowdint.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Deletes records without instantiating the records first}
+  s.description = %q{Deletes records(without instantiating the records first) based on a block(which returns an array of ids) given and also recursively deletes all their associated records if they are marked as :dependent => :destroy. It is useful for background processing.}
 
   s.rubyforge_project = "destroyer"
 
@@ -18,7 +18,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_dependency 'activerecord', '~> 3.0.0'
+
+  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'rspec'
 end

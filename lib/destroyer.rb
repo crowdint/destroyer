@@ -1,5 +1,6 @@
 require "destroyer/version"
+require "destroyer/destroyer"
 
-module Destroyer
-  # Your code goes here...
+class ActiveRecord::Base
+  include Destroyer
 end
