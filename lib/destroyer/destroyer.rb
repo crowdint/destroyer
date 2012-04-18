@@ -48,8 +48,8 @@ module Destroyer
         association.select("#{association.primary_key}").where(["#{_foreign_key} IN (?)", ids])
           .find_in_batches(:batch_size => destroyer_batch_size) do |association_ids|
             destroy_associations(association, association_ids.map(&association.primary_key.to_sym))
-            association.delete_all(["#{_foreign_key} IN (?)", ids])
         end
+        association.delete_all(["#{_foreign_key} IN (?)", ids])
       end
     end
 
