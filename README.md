@@ -43,7 +43,7 @@ If you do not specify a default block, and later in the code you call your Model
     end
 
     class LineItem < ActiveRecord::Base
-      has_many :variant_line_items
+      has_many :variant_line_items, :dependent => :destroy
       belongs_to :purchase_order
     end
 
